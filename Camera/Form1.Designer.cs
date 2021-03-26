@@ -33,6 +33,7 @@ namespace Camera
             this.stop = new System.Windows.Forms.Button();
             this.videoSourcePlayer1 = new AForge.Controls.VideoSourcePlayer();
             this.comboBoxSelectCam = new System.Windows.Forms.ComboBox();
+            this.buttonAdj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // start
@@ -48,7 +49,7 @@ namespace Camera
             // 
             // stop
             // 
-            this.stop.Location = new System.Drawing.Point(324, 385);
+            this.stop.Location = new System.Drawing.Point(245, 385);
             this.stop.Name = "stop";
             this.stop.Size = new System.Drawing.Size(75, 23);
             this.stop.TabIndex = 1;
@@ -73,11 +74,22 @@ namespace Camera
             this.comboBoxSelectCam.Size = new System.Drawing.Size(121, 20);
             this.comboBoxSelectCam.TabIndex = 3;
             // 
+            // buttonAdj
+            // 
+            this.buttonAdj.Location = new System.Drawing.Point(355, 385);
+            this.buttonAdj.Name = "buttonAdj";
+            this.buttonAdj.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdj.TabIndex = 4;
+            this.buttonAdj.Text = "adjust";
+            this.buttonAdj.UseVisualStyleBackColor = true;
+            this.buttonAdj.Click += new System.EventHandler(this.buttonAdj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAdj);
             this.Controls.Add(this.comboBoxSelectCam);
             this.Controls.Add(this.videoSourcePlayer1);
             this.Controls.Add(this.stop);
@@ -95,6 +107,7 @@ namespace Camera
         private System.Windows.Forms.Button stop;
         private AForge.Controls.VideoSourcePlayer videoSourcePlayer1;
         private System.Windows.Forms.ComboBox comboBoxSelectCam;
+        private System.Windows.Forms.Button buttonAdj;
     }
 }
 

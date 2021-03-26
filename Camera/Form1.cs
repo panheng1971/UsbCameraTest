@@ -32,7 +32,9 @@ namespace Camera
             {
                 foreach (FilterInfo device in videoDevices)
                 {
-                    comboBoxSelectCam.Items.Add(device.Name);//把摄像设备添加到摄像列表中                    
+                    comboBoxSelectCam.Items.Add(device.Name);//把摄像设备添加到摄像列表中
+                    comboBoxSelectCam.SelectedIndex=0;
+                    videoDevice = new VideoCaptureDevice(videoDevices[comboBoxSelectCam.SelectedIndex].MonikerString);
                 }
             }
             else
@@ -44,7 +46,7 @@ namespace Camera
 
         private void start_Click(object sender, EventArgs e)
         {
-            videoDevice = new VideoCaptureDevice(videoDevices[comboBoxSelectCam.SelectedIndex].MonikerString);
+           
             videoSourcePlayer1.VideoSource = videoDevice;
             videoSourcePlayer1.SignalToStop();
             videoSourcePlayer1.WaitForStop();
@@ -59,6 +61,11 @@ namespace Camera
         private void stop_Click(object sender, EventArgs e)
         {
             videoSourcePlayer1.Stop();
+        }
+
+        private void buttonAdj_Click(object sender, EventArgs e)
+        {
+            videoDevice.DisplayPropertyPage(IntPtr.Zero);
         }
     }
 }
